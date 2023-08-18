@@ -14,9 +14,9 @@ import requests
 
 engine = pyttsx3.init("sapi5")
 voices = engine.getProperty("voices")
-engine.setProperty("voice", "voices[1].id")
+engine.setProperty("voice", voices[1].id)
 
-aiName = "Charlotte"
+aiName = "assistant"
 
 
 # This function converts text to speech and returns back when all commands queded before tis call are emptied from the queue
@@ -43,9 +43,11 @@ def takeCommand():
     r = sr.Recognizer()
     with sr.Microphone() as source:
         print("Listening...")
+        r.pause_threshold = 0.7
         audio = r.listen(source)
 
         try:
+            print('Recognizing')
             statement = r.recognize_google(audio, language="en-in")
             print(f"user said: {statement}\n")
         except Exception as e:
