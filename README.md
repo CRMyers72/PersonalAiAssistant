@@ -1,6 +1,6 @@
-# assistant
-This is a personal AI assistnat project. 
-Goals:
+# Personal AI Assistant
+This is a personal AI assistant project. 
+## Goals:
   Create a mobile version for Android. 
   Hear audio for a request to search google or wikipedia
   Interact with other androids apps i.e. start timers using chosen clock app or make phone calls
